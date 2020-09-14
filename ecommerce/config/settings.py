@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    # 'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +52,8 @@ INSTALLED_APPS = [
     # "push_notifications",
     'django_extensions',
     'drf_yasg',
+    'djmoney',
+    'import_export',
     
     #? authentication , authorization and social media
     'rest_framework',
