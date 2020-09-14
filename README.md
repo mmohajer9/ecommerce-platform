@@ -6,7 +6,7 @@ Dynamic E-Commerce Ebay Like Platform Using Django , Rest Framework , React and 
 
 1. [x] Project Initialization
 2. [x] Adding Third Party Packages
-3. [ ] Configuring Packages
+3. [x] Configuring Packages
 4. [ ] Authentication App
 5. [ ] ...
 

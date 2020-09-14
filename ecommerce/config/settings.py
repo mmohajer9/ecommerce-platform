@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     "taggit",
     # 'debug_toolbar',
     
-    #? authentication , authorization and social media
+    #? authentication, authorization and social media
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
@@ -74,6 +74,9 @@ INSTALLED_APPS = [
 
     # ? django filters to work with filtering
     "django_filters",
+
+    #? local apps
+    'account_management.apps.AccountManagementConfig',
 
     # ? configs
     'corsheaders',
@@ -97,7 +100,7 @@ REST_FRAMEWORK = {
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.IsAuthenticated',
         # 'rest_framework.permissions.DjangoModelPermissions',
     ),
 
