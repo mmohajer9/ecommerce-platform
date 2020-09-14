@@ -313,7 +313,7 @@ MEDIA_ROOT = MEDIA_DIR
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760
 
-# AUTH_USER_MODEL = "account.User"
+AUTH_USER_MODEL = "account_management.User"
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'smtp.gmail.com'
