@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     # ? third party
     # 'oauth2_provider',
@@ -48,14 +49,13 @@ INSTALLED_APPS = [
     # 'jalali_date',
     # 'django_jalali',
     # "push_notifications",
-    'rest_framework',
-    'rest_framework.authtoken',
-    'dj_rest_auth',
     'django_extensions',
     'drf_yasg',
     
-    #? registration and social media
-    'django.contrib.sites',
+    #? authentication , authorization and social media
+    'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
     'allauth',
     'allauth.account',
     'dj_rest_auth.registration',
@@ -78,6 +78,8 @@ SITE_ID = 1
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
     ],
 
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
@@ -87,10 +89,10 @@ REST_FRAMEWORK = {
 
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 
-    # 'DEFAULT_PERMISSION_CLASSES': (
-    #     # 'rest_framework.permissions.IsAuthenticated',
-    #     # 'rest_framework.permissions.DjangoModelPermissions',
-    # ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.DjangoModelPermissions',
+    ),
 
     'DEFAULT_THROTTLE_CLASSES': [
         'rest_framework.throttling.AnonRateThrottle',
@@ -100,7 +102,8 @@ REST_FRAMEWORK = {
 
     'DEFAULT_THROTTLE_RATES': {
         'anon': '1000/day',
-        'user': '5000/day'
+        'user': '5000/day',
+        'dj_rest_auth' : '60/min',
     },
 
     'DEFAULT_FILTER_BACKENDS': [
@@ -110,6 +113,12 @@ REST_FRAMEWORK = {
     ],
 
 }
+
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'ecommerce-auth'
+ACCOUNT_LOGOUT_ON_GET = False
+OLD_PASSWORD_FIELD_ENABLED = True
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -169,6 +178,32 @@ DATABASES = {
     }
 }
 
+CACHES = {
+
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+
+    # 'default': {
+    #     'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+    #     'LOCATION': '127.0.0.1:11211',
+    # },
+
+    # "default": {
+    #     "BACKEND": "django_redis.cache.RedisCache",
+    #     "LOCATION": "redis://127.0.0.1:6379/1",
+    #     "OPTIONS": {
+    #         "CLIENT_CLASS": "django_redis.client.DefaultClient",
+    #     }
+    # }
+    # "default": {
+    #     "BACKEND": "django_redis.cache.RedisCache",
+    #     "LOCATION": "redis://:RYHuz6ZIvsUWBRE92nRfxtjS@s11.liara.ir:32617/0",
+    #     "OPTIONS": {
+    #         "CLIENT_CLASS": "django_redis.client.DefaultClient",
+    #     }
+    # }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
