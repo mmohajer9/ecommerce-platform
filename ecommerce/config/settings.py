@@ -54,6 +54,9 @@ INSTALLED_APPS = [
     'drf_yasg',
     'djmoney',
     'import_export',
+    'simple_history',
+    "taggit",
+    # 'debug_toolbar',
     
     #? authentication , authorization and social media
     'rest_framework',
@@ -132,7 +135,19 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    #? third-party
+    'simple_history.middleware.HistoryRequestMiddleware',
+    'csp.middleware.CSPMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
+
+#? For Django Debug Toolbar
+# INTERNAL_IPS = [
+#     # ...
+#     '127.0.0.1',
+#     # ...
+# ]
 
 CORS_ORIGIN_ALLOW_ALL = True
 
