@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount.providers.google',
 
 
     # ? django filters to work with filtering
@@ -82,9 +83,10 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
+#? Sites Framework
 SITE_ID = 1
 
-
+#? Rest Framework
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
@@ -124,6 +126,7 @@ REST_FRAMEWORK = {
 
 }
 
+#? SimpleJWT
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
@@ -150,11 +153,28 @@ SIMPLE_JWT = {
     # 'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
+#? dj-rest-auth Settings
 
 REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'ecommerce-auth'
 ACCOUNT_LOGOUT_ON_GET = False
 OLD_PASSWORD_FIELD_ENABLED = True
+
+# REST_AUTH_SERIALIZERS = {
+
+# }
+
+#? allauth settings
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 
 MIDDLEWARE = [
@@ -180,6 +200,8 @@ MIDDLEWARE = [
 #     # ...
 # ]
 
+
+#? django-cors-headers
 CORS_ORIGIN_ALLOW_ALL = True
 
 # CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:8000',] #? this code is not working when allow_all is true
@@ -195,6 +217,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     'x-csrftoken',
 #     'x-requested-with',
 # ]
+
+
 
 ROOT_URLCONF = 'config.urls'
 
