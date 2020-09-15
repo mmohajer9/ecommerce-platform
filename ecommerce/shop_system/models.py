@@ -42,10 +42,9 @@ class Product(models.Model):
     user = models.ForeignKey(USER_MODEL, related_name='products', on_delete=models.CASCADE)
     title = models.CharField(max_length=200, verbose_name=_("Title"))
     slug = AutoSlugField(populate_from='get_title_slug',editable=True,always_update=True)
-    category = models.ForeignKey(
+    category = models.ManyToManyField(
         Category, related_name='products', 
-        on_delete=models.CASCADE,
-        blank=True, null=True
+        blank=True
     )
     created_date = models.DateTimeField(auto_now=False, auto_now_add=True, verbose_name=_("Created Date"))
     updated_date = models.DateTimeField(auto_now=True, verbose_name=_("Updated Date"))
