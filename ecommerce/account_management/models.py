@@ -109,7 +109,7 @@ class User(AbstractUser):
 
 class Address(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name=_("User"))
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name=_("User"))
     city = models.ForeignKey(City, on_delete=models.CASCADE, verbose_name=_("City"))
     postal_code = models.CharField(max_length=20, verbose_name=_("Postal/Zip Code"))
     address_line1 = models.CharField(max_length=100, verbose_name=_("Address Line 1"))
