@@ -10,6 +10,10 @@ from django.contrib.auth import get_user_model
 from autoslug import AutoSlugField
 from django.utils.text import slugify
 
+#? django-money
+from djmoney.models.fields import MoneyField
+from djmoney.money import Money #* for using for searchs and filters
+
 # Create your models here.
 
 USER_MODEL = get_user_model()
@@ -21,6 +25,11 @@ class Product(models.Model):
     slug = AutoSlugField(populate_from='get_title_slug',editable=True,always_update=True)
     created_date = models.DateTimeField(auto_now=False, auto_now_add=True, verbose_name=_("Created Date"))
     updated_date = models.DateTimeField(auto_now=True, verbose_name=_("Updated Date"))
+
+    price = MoneyField(
+        max_digits=14, decimal_places=2,
+        default_currency='USD', 
+    ) # can also be (19,4)
 
 
     def get_title_slug(self):
