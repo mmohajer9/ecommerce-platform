@@ -5,6 +5,8 @@ from django.utils.html import format_html
 from django.utils import timezone
 from datetime import timedelta
 from django.contrib.auth import get_user_model
+
+#? for slugification
 from autoslug import AutoSlugField
 from django.utils.text import slugify
 
@@ -16,12 +18,15 @@ class Product(models.Model):
 
     user = models.ForeignKey(USER_MODEL, related_name='products', on_delete=models.CASCADE)
     title = models.CharField(max_length=200, verbose_name="Title")
+    slug = AutoSlugField(populate_from='get_title_slug',editable=True,always_update=True)
     created_date = models.DateTimeField(auto_now=False, auto_now_add=True, verbose_name=_("Created Date"))
     updated_date = models.DateTimeField(auto_now=True, verbose_name=_("Updated Date"))
 
 
     def get_title_slug(self):
         return slugify(self.title)
+    
+    get_title_slug.short_description = _("Title Slug")
 
     def __str__(self):
         return self.title
