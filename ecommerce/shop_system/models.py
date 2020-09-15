@@ -16,26 +16,39 @@ from djmoney.money import Money #* for using for searchs and filters
 
 # Create your models here.
 
+USER_MODEL = get_user_model()
+
 class Category(models.Model):
-	parent = models.ForeignKey(
+    parent = models.ForeignKey(
         'self', default=None, 
         null=True, blank=True, 
         on_delete=models.SET_NULL, 
         related_name='subcategories', 
-        verbose_name=_("SubCategory")
+        verbose_name=_("Parent Category")
     )
-	title = models.CharField(max_length=200, verbose_name=_("Title"))
-	slug = models.SlugField(max_length=100, unique=True, verbose_name=_("Slug"))
-	class Meta:
-		verbose_name = _("Category")
-		verbose_name_plural = _("Categories")
-		ordering = ['parent__id',]
+    title = models.CharField(max_length=200, verbose_name=_("Title"))
+    slug = AutoSlugField(populate_from='get_title_slug',editable=True,always_update=True)
+    created_date = models.DateTimeField(auto_now_add=True, verbose_name=_("Created Date"))
+    updated_date = models.DateTimeField(auto_now=True, verbose_name=_("Updated Date"))
 
-	def __str__(self):
-		return self.title
+    
+    def get_title_slug(self):
+        return slugify(self.title)
+    get_title_slug.short_description = _("Title Slug")
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = _("Category")
+        verbose_name_plural = _("Categories")
+        ordering = ['parent__id',]
 
 
-USER_MODEL = get_user_model()
+    
+
+
+
 
 class Product(models.Model):
 
@@ -57,7 +70,6 @@ class Product(models.Model):
 
     def get_title_slug(self):
         return slugify(self.title)
-    
     get_title_slug.short_description = _("Title Slug")
 
     def __str__(self):
