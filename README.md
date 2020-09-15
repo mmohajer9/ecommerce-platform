@@ -9,7 +9,10 @@ Dynamic E-Commerce Ebay Like Platform Using Django , Rest Framework , React and 
 3. [x] Configuring Packages
 4. [x] Authentication App
 5. [ ] Social Authentication
-6. [ ] ...
+6. [x] Create ER Diagram for Database Schema
+7. [x] Create Databse Models For All Django Apps
+8. [ ] Configure All Admin Panels for All Django Apps
+9. [ ] ...
 
 ## Credit
 
