@@ -52,10 +52,9 @@ class Category(models.Model):
         ordering = ['parent__id',]
 
 
-    
 
-
-
+def image_upload_to(instance, filename):
+    return f'shop_system/{instance.title}/image/{filename}'
 
 class Product(models.Model):
 
@@ -66,10 +65,20 @@ class Product(models.Model):
         Category, related_name='products', 
         blank=True
     )
+    description = models.CharField(
+        max_length=200, verbose_name=_("Description"),
+        blank=True, null=True
+    )
     created_date = models.DateTimeField(auto_now=False, auto_now_add=True, verbose_name=_("Created Date"))
     updated_date = models.DateTimeField(auto_now=True, verbose_name=_("Updated Date"))
+    image = models.ImageField(upload_to = image_upload_to  , blank=True , verbose_name=_("Image"))
 
     price = MoneyField(
+        max_digits=14, decimal_places=2,
+        default_currency='USD', 
+    ) # can also be (19,4)
+
+    discount_price = MoneyField(
         max_digits=14, decimal_places=2,
         default_currency='USD', 
     ) # can also be (19,4)
@@ -79,7 +88,20 @@ class Product(models.Model):
         return slugify(self.title)
     get_title_slug.short_description = _("Title Slug")
 
+    def categories_list(self):
+        categories = [
+            category.title for category in self.category.all()
+        ]
+        return categories
+    categories_list.short_description = _("Categories")
 
+    def image_thumbnail(self):
+        src = self.image.url if self.image else None
+        if src:
+            return format_html(f"<img width=100 height=75 src='{src}'>")
+        else:
+            return _("No image")
+    image_thumbnail.short_description = _('Image Thumbnail')
 
     def __str__(self):
         return self.title
@@ -89,3 +111,26 @@ class Product(models.Model):
         # managed = True
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
+
+class Order(models.Model):
+
+    STATUS_CHOICES = (
+        ("completed","Completed"),
+        ("pending","Pending"),
+        ("cancelled","Cancelled")
+    )
+
+    user = models.ForeignKey(USER_MODEL, verbose_name=_("User"), on_delete=models.CASCADE)
+    created_date = models.DateTimeField(auto_now=False, auto_now_add=True, verbose_name=_("Created Date"))
+    updated_date = models.DateTimeField(auto_now=True, verbose_name=_("Updated Date"))
+    status = models.CharField(_("Order Status"),choices=STATUS_CHOICES, max_length=50)
+    
+
+    def __str__(self):
+        return self.id
+
+    class Meta:
+        # db_table = ''
+        # managed = True
+        verbose_name = 'Order'
+        verbose_name_plural = 'Orders'

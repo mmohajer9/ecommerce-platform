@@ -8,7 +8,9 @@ from .models import (
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'title','user',
-        'get_title_slug',
+        'image_thumbnail',
+        'slug','categories_list',
+        'price','discount_price',
         'created_date','updated_date',
     )
     # list_filter = ([])
@@ -21,7 +23,7 @@ admin.site.register(Product , ProductAdmin)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'title','parent',
-        'get_title_slug','subcategories_list',
+        'slug','subcategories_list',
         'created_date','updated_date',
     )
     # list_filter = ([])
