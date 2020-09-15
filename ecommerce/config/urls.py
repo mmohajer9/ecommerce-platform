@@ -46,7 +46,10 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
     #? authentication and authorization
-    # path('api-auth/', include('rest_framework.urls')),
+    
+    # path('api-auth/', include('rest_framework.urls')), #* Built-in Urls for browsable API
+    # path('accounts/', include('allauth.urls')) #* for Puer Django not Rest Framework
+
     path('api/v1/auth/', include('dj_rest_auth.urls')),
     path('api/v1/auth/registration/', include('dj_rest_auth.registration.urls')),
 

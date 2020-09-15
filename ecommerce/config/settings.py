@@ -78,6 +78,7 @@ INSTALLED_APPS = [
 
     #? local apps
     'account_management.apps.AccountManagementConfig',
+    'shop_system.apps.ShopSystemConfig',
 
     # ? configs
     'corsheaders',
