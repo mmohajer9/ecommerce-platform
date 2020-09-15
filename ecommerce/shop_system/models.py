@@ -36,6 +36,13 @@ class Category(models.Model):
         return slugify(self.title)
     get_title_slug.short_description = _("Title Slug")
 
+    def subcategories_list(self):
+        subcategories = [
+            subcategory.title for subcategory in self.subcategories.all()
+        ]
+        return subcategories
+    subcategories_list.short_description = _("SubCategories")
+
     def __str__(self):
         return self.title
     
@@ -71,6 +78,8 @@ class Product(models.Model):
     def get_title_slug(self):
         return slugify(self.title)
     get_title_slug.short_description = _("Title Slug")
+
+
 
     def __str__(self):
         return self.title

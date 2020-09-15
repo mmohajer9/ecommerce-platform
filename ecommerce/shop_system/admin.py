@@ -21,7 +21,7 @@ admin.site.register(Product , ProductAdmin)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'title','parent',
-        'get_title_slug',
+        'get_title_slug','subcategories_list',
         'created_date','updated_date',
     )
     # list_filter = ([])
