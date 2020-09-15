@@ -28,7 +28,7 @@ class Category(models.Model):
     )
     title = models.CharField(max_length=200, verbose_name=_("Title"))
     slug = AutoSlugField(populate_from='get_title_slug',editable=True,always_update=True)
-    created_date = models.DateTimeField(auto_now_add=True, verbose_name=_("Created Date"))
+    created_date = models.DateTimeField(auto_now=False, auto_now_add=True, verbose_name=_("Created Date"))
     updated_date = models.DateTimeField(auto_now=True, verbose_name=_("Updated Date"))
 
     
