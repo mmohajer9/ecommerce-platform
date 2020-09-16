@@ -141,3 +141,8 @@ class OrderItem(models.Model):
     quantity = models.IntegerField(default=0, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        # db_table = ''
+        # managed = True
+        verbose_name = 'Order Item'
+        verbose_name_plural = 'Order Items'
