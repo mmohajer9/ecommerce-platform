@@ -5,7 +5,7 @@ import Header from "../../components/Homepage/Header";
 const Homepage = (props) => {
   return (
     <Grid container spacing={0} direction="column">
-      <Grid item>
+      <Grid item xs={12}>
         <Header></Header>
       </Grid>
       <Grid item>REST</Grid>
