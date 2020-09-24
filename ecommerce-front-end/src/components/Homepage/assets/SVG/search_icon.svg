@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43.712" height="44.212" viewBox="0 0 43.712 44.212">
+  <g id="serach_icon" transform="translate(-324 -83)">
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(324 83)" fill="#fff" stroke="#dc3755" stroke-width="1.7">
+      <circle cx="18" cy="18" r="18" stroke="none"/>
+      <circle cx="18" cy="18" r="17.15" fill="none"/>
+    </g>
+    <line id="Line_1" data-name="Line 1" y2="17" transform="translate(354.49 113.99) rotate(-45)" fill="none" stroke="#dc3755" stroke-linecap="round" stroke-width="1.7"/>
+  </g>
+</svg>

@@ -1,11 +1,22 @@
 import React from "react";
-
-const Homepage = () => {
-
-
-    return (
-        <div>THIS IS HOMEPAGE</div>
-    )
+import { connect } from "react-redux";
+import { Grid } from "@material-ui/core";
+import Header from "../../components/Homepage/Header";
+const Homepage = (props) => {
+  return (
+    <Grid container spacing={0} direction="column">
+      <Grid item>
+        <Header></Header>
+      </Grid>
+      <Grid item>REST</Grid>
+    </Grid>
+  );
 };
 
-export default Homepage;
+const mapStateToProps = (state) => {
+  return {
+    homepageState: state,
+  };
+};
+
+export default connect(mapStateToProps)(Homepage);

@@ -1,0 +1,22 @@
+<svg id="chat_1__RED" data-name="chat (1)_RED" xmlns="http://www.w3.org/2000/svg" width="43.634" height="43.634" viewBox="0 0 43.634 43.634">
+  <g id="Group_3" data-name="Group 3" transform="translate(8.181 8.181)">
+    <g id="Group_2" data-name="Group 2">
+      <path id="Path_13" data-name="Path 13" d="M113.726,96H97.364a1.364,1.364,0,0,0,0,2.727h16.363a1.364,1.364,0,1,0,0-2.727Z" transform="translate(-96 -96)" fill="#dc3755"/>
+    </g>
+  </g>
+  <g id="Group_5" data-name="Group 5" transform="translate(8.181 13.636)">
+    <g id="Group_4" data-name="Group 4">
+      <path id="Path_14" data-name="Path 14" d="M108.272,160H97.364a1.364,1.364,0,0,0,0,2.727h10.908a1.364,1.364,0,0,0,0-2.727Z" transform="translate(-96 -160)" fill="#dc3755"/>
+    </g>
+  </g>
+  <g id="Group_7" data-name="Group 7">
+    <g id="Group_6" data-name="Group 6">
+      <path id="Path_15" data-name="Path 15" d="M30,0H5.454A5.46,5.46,0,0,0,0,5.454V32.725a1.362,1.362,0,0,0,.785,1.235,1.383,1.383,0,0,0,.578.128,1.363,1.363,0,0,0,.873-.316l7.8-6.5H30a5.46,5.46,0,0,0,5.454-5.454V5.454A5.46,5.46,0,0,0,30,0Zm2.727,21.817A2.73,2.73,0,0,1,30,24.544H9.545a1.362,1.362,0,0,0-.873.316L2.727,29.816V5.454A2.73,2.73,0,0,1,5.454,2.727H30a2.73,2.73,0,0,1,2.727,2.727Z" fill="#dc3755"/>
+    </g>
+  </g>
+  <g id="Group_9" data-name="Group 9" transform="translate(10.908 10.908)">
+    <g id="Group_8" data-name="Group 8">
+      <path id="Path_16" data-name="Path 16" d="M155.271,128a1.364,1.364,0,1,0,0,2.727A2.73,2.73,0,0,1,158,133.454v23.069l-4.6-3.682a1.374,1.374,0,0,0-.851-.3h-19.09a2.73,2.73,0,0,1-2.727-2.727v-1.364a1.364,1.364,0,0,0-2.727,0v1.364a5.46,5.46,0,0,0,5.454,5.454h18.61l6.444,5.157a1.365,1.365,0,0,0,2.217-1.066V133.454A5.46,5.46,0,0,0,155.271,128Z" transform="translate(-128 -128)" fill="#dc3755"/>
+    </g>
+  </g>
+</svg>

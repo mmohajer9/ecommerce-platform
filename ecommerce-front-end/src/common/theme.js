@@ -1,6 +1,10 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-const theme = createMuiTheme({});
+const theme = createMuiTheme({
+  palette: {
+    HeaderBgColor: "#F8F8F8",
+  },
+});
 
 const darkTheme = createMuiTheme({
   palette: {
