@@ -18,14 +18,16 @@ const App = () => {
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : theme}>
-      <CssBaseline />
-      <Router>
-        <Switch>
-          <Route path="/">
-            <Homepage />
-          </Route>
-        </Switch>
-      </Router>
+      <>
+        <CssBaseline />
+        <Router>
+          <Switch>
+            <Route path="/">
+              <Homepage />
+            </Route>
+          </Switch>
+        </Router>
+      </>
     </ThemeProvider>
   );
 };
