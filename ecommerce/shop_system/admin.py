@@ -24,7 +24,7 @@ admin.site.register(Product , ProductAdmin)
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
-        'title','id','parent',
+        'title','alt_title','id','parent',
         'slug','subcategories_list',
         'created_date','updated_date',
     )
