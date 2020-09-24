@@ -2,7 +2,7 @@ import { ThemeProvider } from "@material-ui/core";
 import React from "react";
 
 import "./App.css";
-import { darkTheme, theme } from "./common/theme";
+import { darkTheme, theme } from "../../common/theme";
 
 const App = () => {
   // eslint-disable-next-line no-unused-vars
