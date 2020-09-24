@@ -10,12 +10,16 @@ import {
 } from "react-router-dom";
 
 //? Components Are Dynamically Added
-const Homepage = loadable(() => import("../../layouts/Homepage/Homepage"));
+const Homepage = loadable(() => import("../../layouts/Homepage/Homepage"), {
+  fallback: <div>Loading...</div>,
+});
 
 const App = () => {
   // eslint-disable-next-line no-unused-vars
   const [darkMode, setDarkMode] = React.useState(false);
-
+  if (!Homepage) {
+    console.log("not hompage");
+  }
   return (
     <ThemeProvider theme={darkMode ? darkTheme : theme}>
       <>
