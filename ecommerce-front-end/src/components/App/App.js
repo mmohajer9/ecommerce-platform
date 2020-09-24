@@ -1,8 +1,6 @@
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import React from "react";
 import loadable from "@loadable/component";
-
-import "./App.css";
 import { darkTheme, theme } from "../../common/theme";
 import {
   BrowserRouter as Router,
