@@ -19,6 +19,7 @@ from djmoney.money import Money #* for using for searchs and filters
 USER_MODEL = get_user_model()
 
 class Category(models.Model):
+    
     parent = models.ForeignKey(
         'self', default=None, 
         null=True, blank=True, 
@@ -27,6 +28,11 @@ class Category(models.Model):
         verbose_name=_("Parent Category")
     )
     title = models.CharField(max_length=200, verbose_name=_("Title"))
+    alt_title = models.CharField(
+        max_length=200, 
+        verbose_name=_("Alternative Title") ,
+        blank=True, null=True
+    )
     slug = AutoSlugField(populate_from='get_title_slug',editable=True,always_update=True)
     created_date = models.DateTimeField(auto_now=False, auto_now_add=True, verbose_name=_("Created Date"))
     updated_date = models.DateTimeField(auto_now=True, verbose_name=_("Updated Date"))
