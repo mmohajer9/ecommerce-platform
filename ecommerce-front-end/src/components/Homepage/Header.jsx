@@ -8,11 +8,7 @@ import Icon from "@material-ui/core/Icon";
 import SearchBar from "./SearchBar";
 import { Divider, Grid } from "@material-ui/core";
 
-import ProfileIcon from "./assets/SVG/user.svg";
-import NotificationsIcon from "./assets/SVG/notification.svg";
-import ChatsIcon from "./assets/SVG/chat (1).svg";
-import CartIcon from "./assets/SVG/shopping-basket.svg";
-import MenuIcon from "@material-ui/icons/Menu";
+import * as HomepageIcon from "./Icons"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,7 +46,7 @@ export default function ButtonAppBar() {
               color="inherit"
               aria-label="menu"
             >
-              <MenuIcon />
+              <HomepageIcon.MenuIcon />
             </IconButton>
           </Grid>
           <Grid item container xs={5} sm={4} md={2} justify="center">
@@ -77,7 +73,7 @@ export default function ButtonAppBar() {
                   <img
                     alt="cart-icon"
                     className={classes.imageIcon}
-                    src={CartIcon}
+                    src={HomepageIcon.CartIcon}
                   />
                 </Icon>
               </IconButton>
@@ -97,7 +93,7 @@ export default function ButtonAppBar() {
                   <img
                     alt="chats-icon"
                     className={classes.imageIcon}
-                    src={ChatsIcon}
+                    src={HomepageIcon.ChatsIcon}
                   />
                 </Icon>{" "}
               </IconButton>
@@ -117,7 +113,7 @@ export default function ButtonAppBar() {
                   <img
                     alt="notifications-icon"
                     className={classes.imageIcon}
-                    src={NotificationsIcon}
+                    src={HomepageIcon.NotificationsIcon}
                   />
                 </Icon>{" "}
               </IconButton>
@@ -137,7 +133,7 @@ export default function ButtonAppBar() {
                   <img
                     alt="profile-icon"
                     className={classes.imageIcon}
-                    src={ProfileIcon}
+                    src={HomepageIcon.ProfileIcon}
                   />
                 </Icon>
               </IconButton>
