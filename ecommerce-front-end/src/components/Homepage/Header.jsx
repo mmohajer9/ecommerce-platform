@@ -4,22 +4,17 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import Icon from "@material-ui/core/Icon";
+// import Icon from "@material-ui/core/Icon";
 import SearchBar from "./SearchBar";
 import { Divider, Grid } from "@material-ui/core";
 
-import * as HomepageIcon from "./Icons"
+import * as HomepageIcon from "./Icons";
+import CustomIcon from "../../common/customIcon";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.HeaderBgColor,
-    paddingBottom: theme.spacing(2)
-  },
-  imageIcon: {
-    height: "100%",
-  },
-  iconRoot: {
-    textAlign: "center",
+    paddingBottom: theme.spacing(2),
   },
   menuButton: {
     display: "none",
@@ -69,13 +64,7 @@ export default function ButtonAppBar() {
               className={classes.gridItem}
             >
               <IconButton aria-label="cart" color="inherit">
-                <Icon classes={{ root: classes.iconRoot }}>
-                  <img
-                    alt="cart-icon"
-                    className={classes.imageIcon}
-                    src={HomepageIcon.CartIcon}
-                  />
-                </Icon>
+                <CustomIcon importedSvgIcon={HomepageIcon.CartIcon} />
               </IconButton>
               <Typography variant="subtitle2">Cart</Typography>
             </Grid>
@@ -89,13 +78,7 @@ export default function ButtonAppBar() {
               className={classes.gridItem}
             >
               <IconButton aria-label="chats" color="inherit">
-                <Icon classes={{ root: classes.iconRoot }}>
-                  <img
-                    alt="chats-icon"
-                    className={classes.imageIcon}
-                    src={HomepageIcon.ChatsIcon}
-                  />
-                </Icon>{" "}
+                <CustomIcon importedSvgIcon={HomepageIcon.ChatsIcon} />
               </IconButton>
               <Typography variant="subtitle2">Chats</Typography>
             </Grid>
@@ -109,13 +92,7 @@ export default function ButtonAppBar() {
               className={classes.gridItem}
             >
               <IconButton aria-label="notifications" color="inherit">
-                <Icon classes={{ root: classes.iconRoot }}>
-                  <img
-                    alt="notifications-icon"
-                    className={classes.imageIcon}
-                    src={HomepageIcon.NotificationsIcon}
-                  />
-                </Icon>{" "}
+                <CustomIcon importedSvgIcon={HomepageIcon.NotificationsIcon} />
               </IconButton>
               <Typography variant="subtitle2">Mails</Typography>
             </Grid>
@@ -129,13 +106,7 @@ export default function ButtonAppBar() {
               className={classes.gridItem}
             >
               <IconButton aria-label="profile" color="inherit">
-                <Icon classes={{ root: classes.iconRoot }}>
-                  <img
-                    alt="profile-icon"
-                    className={classes.imageIcon}
-                    src={HomepageIcon.ProfileIcon}
-                  />
-                </Icon>
+                <CustomIcon importedSvgIcon={HomepageIcon.ProfileIcon} />
               </IconButton>
               <Typography variant="subtitle2">Profile</Typography>
             </Grid>
