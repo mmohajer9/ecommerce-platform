@@ -47,7 +47,7 @@ const CardCarousel = (props) => {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    padding: "10em 0",
+    padding: "10em 0 10em 0",
   };
   const settings = {
     dots: false,

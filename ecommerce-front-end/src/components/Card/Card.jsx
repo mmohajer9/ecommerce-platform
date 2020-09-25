@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     margin: "auto",
   },
   media: {
-    height: 200,
+    height: 300,
   },
 });
 
@@ -26,12 +26,12 @@ export default function MediaCard() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image="https://placeimg.com/640/480/tech"
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            Gadget
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging

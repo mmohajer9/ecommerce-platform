@@ -8,6 +8,7 @@ import {
   CardCarousel,
   ImageCarousel,
 } from "../../components/Carousel/Carousel";
+import Footer from "../../components/Footer/Footer";
 
 // const useStyles = makeStyles((theme) => ({
 
@@ -37,6 +38,9 @@ const Homepage = (props) => {
       </Grid>
       <Grid item xs={12}>
         <CardCarousel items={items} />
+      </Grid>
+      <Grid item xs={12}>
+        <Footer />
       </Grid>
     </Grid>
   );
