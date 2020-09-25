@@ -2,13 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 import { Grid } from "@material-ui/core";
 import Header from "../../components/Homepage/Header";
+import Categories from "../../components/Homepage/Categories";
 const Homepage = (props) => {
   return (
     <Grid container spacing={0} direction="column">
       <Grid item xs={12}>
-        <Header></Header>
+        <Header />
       </Grid>
-      <Grid item>REST</Grid>
+      <Grid item xs={12}>
+        <Categories />
+      </Grid>
     </Grid>
   );
 };
