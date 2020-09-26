@@ -9,8 +9,8 @@ import SearchBar from "./SearchBar";
 import { Divider, Grid } from "@material-ui/core";
 
 import * as HomepageIcon from "./Icons";
-import CustomIcon from "../../common/customIcon";
-import { Home } from "@material-ui/icons";
+// import CustomIcon from "../../common/customIcon";
+// import { Home } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
