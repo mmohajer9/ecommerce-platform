@@ -10,6 +10,7 @@ import { Divider, Grid } from "@material-ui/core";
 
 import * as HomepageIcon from "./Icons";
 import CustomIcon from "../../common/customIcon";
+import { Home } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
   gridItem: {
     textAlign: "center",
   },
+  iconButtonStyle : {
+    
+  }
 }));
 
 export default function ButtonAppBar() {
@@ -63,8 +67,8 @@ export default function ButtonAppBar() {
               md={1}
               className={classes.gridItem}
             >
-              <IconButton aria-label="cart" color="inherit">
-                <CustomIcon importedSvgIcon={HomepageIcon.CartIcon} />
+              <IconButton className={classes.iconButtonStyle} aria-label="cart" color="inherit">
+                <HomepageIcon.ShoppingBasketIcon fontSize="large" />
               </IconButton>
               <Typography variant="subtitle2">Cart</Typography>
             </Grid>
@@ -78,7 +82,7 @@ export default function ButtonAppBar() {
               className={classes.gridItem}
             >
               <IconButton aria-label="chats" color="inherit">
-                <CustomIcon importedSvgIcon={HomepageIcon.ChatsIcon} />
+                <HomepageIcon.ChatIcon fontSize="large" />
               </IconButton>
               <Typography variant="subtitle2">Chats</Typography>
             </Grid>
@@ -92,7 +96,7 @@ export default function ButtonAppBar() {
               className={classes.gridItem}
             >
               <IconButton aria-label="notifications" color="inherit">
-                <CustomIcon importedSvgIcon={HomepageIcon.NotificationsIcon} />
+                <HomepageIcon.NotificationsIcon fontSize="large" />
               </IconButton>
               <Typography variant="subtitle2">Mails</Typography>
             </Grid>
@@ -106,7 +110,7 @@ export default function ButtonAppBar() {
               className={classes.gridItem}
             >
               <IconButton aria-label="profile" color="inherit">
-                <CustomIcon importedSvgIcon={HomepageIcon.ProfileIcon} />
+                <HomepageIcon.AccountCircleIcon fontSize="large" />
               </IconButton>
               <Typography variant="subtitle2">Profile</Typography>
             </Grid>

@@ -16,7 +16,7 @@ const Homepage = loadable(() => import("../../layouts/Homepage/Homepage"), {
 
 const App = () => {
   // eslint-disable-next-line no-unused-vars
-  const [darkMode, setDarkMode] = React.useState(false);
+  const [darkMode, setDarkMode] = React.useState(true);
   if (!Homepage) {
     console.log("not hompage");
   }

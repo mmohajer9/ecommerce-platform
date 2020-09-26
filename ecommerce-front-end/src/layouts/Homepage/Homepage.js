@@ -26,6 +26,18 @@ const Homepage = (props) => {
     "https://placeimg.com/640/480/animals",
     "https://placeimg.com/640/480/nature",
     "https://placeimg.com/640/480/architecture",
+    "https://placeimg.com/640/480/animals",
+    "https://placeimg.com/640/480/nature",
+    "https://placeimg.com/640/480/architecture",
+    "https://placeimg.com/640/480/animals",
+    "https://placeimg.com/640/480/nature",
+    "https://placeimg.com/640/480/architecture",
+    "https://placeimg.com/640/480/animals",
+    "https://placeimg.com/640/480/nature",
+    "https://placeimg.com/640/480/architecture",
+    "https://placeimg.com/640/480/animals",
+    "https://placeimg.com/640/480/nature",
+    "https://placeimg.com/640/480/architecture",
   ];
 
   return (
@@ -40,10 +52,18 @@ const Homepage = (props) => {
         <ImageCarousel items={items} />
       </Grid>
       <Grid item xs={12}>
-        <CardCarousel background={firstBg} items={items} />
+        <CardCarousel
+          background={firstBg}
+          items={items}
+          title={"Best Offers"}
+        />
       </Grid>
       <Grid item xs={12}>
-        <CardCarousel background={secondBg} items={items} />
+        <CardCarousel
+          background={secondBg}
+          items={items}
+          title={"Best Offers"}
+        />
       </Grid>
       <Grid item xs={12}>
         <Footer />
