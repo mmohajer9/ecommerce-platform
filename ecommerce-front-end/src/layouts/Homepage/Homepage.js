@@ -1,8 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Container, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import Header from "../../components/Homepage/Header";
 import Categories from "../../components/Homepage/Categories";
+import firstBg from "./assets/specialOffer.png";
+import secondBg from "./assets/specialOffer2.jpeg";
+
 // import Card from "../../components/Card/Card";
 import {
   CardCarousel,
@@ -37,7 +40,10 @@ const Homepage = (props) => {
         <ImageCarousel items={items} />
       </Grid>
       <Grid item xs={12}>
-        <CardCarousel items={items} />
+        <CardCarousel background={firstBg} items={items} />
+      </Grid>
+      <Grid item xs={12}>
+        <CardCarousel background={secondBg} items={items} />
       </Grid>
       <Grid item xs={12}>
         <Footer />

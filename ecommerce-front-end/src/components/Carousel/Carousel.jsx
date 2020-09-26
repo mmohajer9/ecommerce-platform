@@ -1,7 +1,6 @@
 import React from "react";
 import Flickity from "react-flickity-component";
 import Card from "../Card/Card";
-import CardCarouselBackground from "./assets/specialOffer.png";
 import Slider from "react-slick";
 
 import "./styles.css";
@@ -37,13 +36,13 @@ const CardCarousel = (props) => {
   const matchesMD = useMediaQuery((theme) => theme.breakpoints.up("md"));
   const matchesLG = useMediaQuery((theme) => theme.breakpoints.up("lg"));
 
-  const { items } = props;
+  const { items , background } = props;
   const sliderStyle = {
     width: "90%",
     margin: "0 auto",
   };
   const containerStyle = {
-    background: `url(${CardCarouselBackground})`,
+    background: `url(${background})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
