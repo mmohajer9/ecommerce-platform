@@ -1,14 +1,14 @@
 import React from "react";
 import Flickity from "react-flickity-component";
 import Card from "../Card/Card";
-import CardCarouselBackground from "./assets/cardCarouselBg.png";
-
+import CardCarouselBackground from "./assets/specialOffer.png";
 import Slider from "react-slick";
 
 import "./styles.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { Container, Typography } from "@material-ui/core";
 
 class ImageCarousel extends React.Component {
   state = {
@@ -39,7 +39,7 @@ const CardCarousel = (props) => {
 
   const { items } = props;
   const sliderStyle = {
-    width: "85%",
+    width: "90%",
     margin: "0 auto",
   };
   const containerStyle = {
@@ -47,23 +47,29 @@ const CardCarousel = (props) => {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    padding: "8em 0 8em 0",
+    padding: "2em 0 4em 0",
   };
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
-    speed: 0,
+    speed: 300,
     slidesToShow: matchesLG ? 3 : matchesMD ? 2 : 1,
-    slidesToScroll: 1,
+    slidesToScroll: matchesLG ? 3 : matchesMD ? 2 : 1,
+
+    // centerMode: true
+    // fade: true,
   };
   return (
-    <div style={containerStyle}>
+    <Container maxWidth="xl" style={containerStyle}>
+      <Typography style={{ margin: "1rem 0 2rem 2rem"  , color : "white"}} variant="h3">
+        Best Offers
+      </Typography>
       <Slider {...settings} style={sliderStyle}>
         {items.map((item, index) => {
           return <Card key={index} />;
         })}
       </Slider>
-    </div>
+    </Container>
   );
 };
 export { ImageCarousel, CardCarousel };

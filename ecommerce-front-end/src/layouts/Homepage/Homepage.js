@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Grid } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import Header from "../../components/Homepage/Header";
 import Categories from "../../components/Homepage/Categories";
 // import Card from "../../components/Card/Card";
